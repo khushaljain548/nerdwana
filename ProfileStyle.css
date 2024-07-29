@@ -1,0 +1,227 @@
+/* Define custom fonts */
+@font-face {
+    font-family: 'Nothinginspired';
+    src: url('ndot-47-inspired-by-nothing.ttf');
+}
+
+@font-face {
+    font-family: 'Nothingnormal';
+    src: url('NType82-Regular.otf');
+}
+
+/* Global styles */
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.nav-left a {
+    font-family: 'Nothinginspired', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+    color: #1A1110;
+}
+
+.nav-right {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    font-family: 'Nothinginspired', sans-serif;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+    color: #1A1110;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    color: red;
+}
+
+main {
+    padding: 10px 20px 20px; /* Increased padding for header */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 1000px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Arrange children in a column */
+}
+
+.user-info {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.user-info h2 {
+    font-family: 'Nothinginspired', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.user-info p {
+    font-family: 'Nothingnormal', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.posts-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.posts-container h2 {
+    font-family: 'Nothinginspired', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.posts-container .post {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.posts-container .post:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.posts-container .post h3 {
+    font-family: 'Nothinginspired', sans-serif;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.posts-container .post p {
+    font-family: 'Nothingnormal', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    font-size: 20px;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #d71a21;
+}
+
+p, ul {
+    font-family: 'Nothingnormal', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+
+.ql-editor {
+    font-family: 'Nothingnormal', sans-serif;
+}
+
+.email-us {
+    font-family: 'Nothingnormal', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    background-color: #4682b4;
+    color: white;
+    border: 1px solid #4682b4;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    float: right;
+}
+
+.email-us:hover {
+    background-color: white;
+    color: #4682b4;
+    border: 1px dotted #4682b4;
+}
+
+li::marker {
+    color: #d71a21;
+}
+
+.delete-account-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.delete-account-form button {
+    background-color: #d71a21;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-account-form button:hover {
+    background-color: #e63946;
+}

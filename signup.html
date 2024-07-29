@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Signup Page</title>
+    <style>
+        @font-face {
+            font-family: 'Nothinginspired';
+            src: url('ndot-47-inspired-by-nothing.ttf');
+        }
+        @font-face {
+            font-family: 'Nothingnormal';
+            src: url('NType82-Regular.otf');
+        }
+        
+        body {
+            /* Glassmorphism styles */
+            background: rgba(247, 156, 156, 0.42);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
+            background-image: url("https://cdn.dribbble.com/userupload/5998355/file/original-5ccb76da57dcfa3f005863c2e1c01fb2.gif");
+    background-size: cover; /* Resize to cover the entire container */
+    background-repeat: no-repeat;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #efefef;
+            color: #1A1110;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        header {
+            border-bottom: 1px dotted #000;
+            display: inline-block;
+            background-color: #ffffff;
+            color: #1A1110;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin-left: 20px;
+        }
+        .nav-left a {
+            font-family: 'Nothinginspired', sans-serif;
+            font-size: 25px;
+            text-decoration: none;
+            color: #1A1110;
+        }
+        h3 {
+            border-bottom: 2px dotted #000;
+            border-top: 2px dotted #000;
+            display: block;
+            font-family: 'Nothinginspired', sans-serif;
+            font-size: 24px;
+            margin: 0 auto;
+            font-weight: lighter;
+            padding-bottom: 10px;
+        }
+        .nav-right {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-right a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+            font-family: 'Nothinginspired', sans-serif;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        .nav-right a:hover {
+            color: #1A1110;
+        }
+        main {
+            padding: 100px 20px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: calc(100vh - 140px);
+            box-sizing: border-box;
+            flex: 1;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            width: 80%;
+            max-width: 1000px;
+            margin: auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .container h2 {
+            font-family: 'Nothingnormal', sans-serif;
+        }
+        .left-section, .right-section {
+            padding: 20px;
+            flex: 1;
+        }
+        .left-section {
+            border-right: 1px dotted #d3d3d3;
+        }
+        .left-section h2 {
+            font-family: 'Nothinginspired', sans-serif;
+            font-size: 24px;
+            margin: 0 auto;
+            font-weight: lighter;
+            padding-bottom: 10px;
+        }
+        .right-section {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        p, ul {
+            font-family: 'Nothingnormal', sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+            letter-spacing: 1px;
+        }
+    
+        li::marker {
+            color: #6495ed;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            font-family: 'Nothingnormal', sans-serif;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: none; /* Remove the existing border */
+            border-top: 1px dotted #d3d3d3; /* Add a top border */
+            border-bottom: 1px dotted #d3d3d3; /* Add a bottom border */
+            font-family: 'Nothingnormal', sans-serif;
+            border-radius: 0; /* Ensure no rounded corners */
+            outline: none; /* Remove default outline */
+            background-color: #ffffff;
+        }
+        button {
+            font-family: 'Nothingnormal', sans-serif; /* Button font */
+            font-size: 18px; /* Button text size */
+            letter-spacing: 1px; /* Adjusts the gap between letters */
+            background-color: #6495ed; /* Button color */
+            color: white; /* Text color */
+            border: 1px solid #6495ed   ; /* Border color */
+            padding: 10px 20px; /* Button size */
+            border-radius: 50px; /* Makes the button round */
+            cursor: pointer; /* Changes the cursor when you hover over the button */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+        button:hover {
+            background-color: white;
+            color: #6495ed;
+            border: 1px dotted #6495ed;
+        }
+        footer {
+            border-top: 1px dotted #000;
+            display: inline-block;
+            background-color: #ffffff;
+            color: #1A1110;
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .social-icons a {
+            font-size: 20px;
+            color: #1A1110;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+        .dotted-line {
+            border-top: 1px dotted #f00;
+            color: #fff;
+            background-color: #f00;
+            height: 1px;
+            width: 50%;
+        }
+        .container-border {
+            border-bottom: 1px dotted #000;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-left">
+            <a href="#">NERDWANA</a>
+        </div>            
+        <nav class="nav-right">
+            <a href="test.php">Posts</a>
+            <a href="about.php">About</a>
+            <a href="guidelines.php">Guidelines</a>
+            <a href="contact.php">Contact</a>
+        </nav>  
+    </header>
+    <main>
+        <div class="container">
+            <div class="left-section">
+                <h2>NERDWANA</h2>
+                <p>     Welcome to NERDWANA, a vibrant online community where tech enthusiasts come together to share knowledge, discuss the latest trends, and help each other grow. Whether you're a seasoned developer, a curious beginner, or simply someone who loves staying up-to-date on the ever-evolving world of technology, NERDWANA has something for you.</p>
+                <p class="container-border">Here's what you can expect from Nerdwana:</p>
+                <ul>
+                    <li>Ask Questions</li>
+                    <li>Share Tech Wisdom</li>
+                    <li>Engage in Discussions</li>
+                    <li>Build Connections</li>
+                </ul>
+            </div>
+            <div class="right-section">
+                <h2>Signup</h2>
+                <form id="form">
+                    <label for="username">Username</label>
+                    <input type="text" class="input" id="username" placeholder="User Name" required>
+                    <label for="email">Email</label>
+                    <input type="email" class="input" id="email" placeholder="Email" required>
+                    <label for="password">Password</label>
+                    <input type="password" class="input" id="password" placeholder="Password" required>
+                    <button type="submit" class="submit-btn" id="signup-btn">Signup</button>
+                    <p style="text-align: center; margin-top: 20px;" class="signup-link">
+                        Already have an account? <a href="login.html" style="color: #6495ed;">Login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="social-icons">
+            <a href="https://twitter.com/nerdwana_c"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/nerdwana.community/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a style="font-family: 'Nothingnormal', sans-serif;
+            font-size: 18px;
+            line-height: 1.5;">© 2024 Our Community. All rights reserved.</a>
+    </footer>
+    <script src="signup.js"></script>
+</body>
+</html>
